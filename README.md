@@ -1,3 +1,3 @@
 # HopScotch
 
-En ole kovin tyytyväinen käyttämiini toteutustapoihin, mutta tein sen niin hyvin kuin sillä hetkellä osasin.
+Sekunda Oy:lle kehitetty demopeli 2020 syksynä.
