@@ -9,22 +9,17 @@ public class JatkaScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gameObject.name == "Level1")
-        {
-            SceneManager.LoadScene("Level1");
-        }
-        else if (gameObject.name == "Level2")
+        if (GameObject.Find("SceneInfo").GetComponent<Text>().text == "Level1")
         {
             SceneManager.LoadScene("Level2");
         }
-        else if (gameObject.name == "Level3")
+        else if (GameObject.Find("SceneInfo").GetComponent<Text>().text == "Level2")
         {
             SceneManager.LoadScene("Level3");
         }
-        else
+        else if (GameObject.Find("SceneInfo").GetComponent<Text>().text == "Level3")
         {
-            Debug.Log("Peliä jatketaan");
-            SceneManager.LoadScene(GameObject.Find("SceneInfo").GetComponent<Text>().text);
+            SceneManager.LoadScene("Credits");
         }
     }
 }

@@ -23,12 +23,20 @@ public class SkanneriScript : MonoBehaviour
          }*/
         if (ruutuNro == input)
         {
-            GameObject.Find("SceneInfo").GetComponent<Text>().text = SceneManager.GetActiveScene().name;
-            DontDestroyOnLoad(GameObject.Find("SceneInfo"));
-            SceneManager.LoadScene("VoittoScene");
+            StartCoroutine(LateCall());
+            IEnumerator LateCall()
+            {
+                yield return new WaitForSeconds(1);
+
+                GameObject.Find("SceneInfo").GetComponent<Text>().text = SceneManager.GetActiveScene().name;
+                DontDestroyOnLoad(GameObject.Find("SceneInfo"));
+                SceneManager.LoadScene("VoittoScene");
+            }
         }
-        Debug.Log(ruutuNro);
+
         GetComponent<AudioSource>().Play(0);
+
+        Debug.Log(ruutuNro);
         ruutuNro++;
     }
 }
